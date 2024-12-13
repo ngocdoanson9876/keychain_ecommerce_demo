@@ -1,22 +1,46 @@
 // File cart_update_invoice.js
 const invoiceSection = document.getElementById("invoice-details"); // Phần thông tin hóa đơn
+let products = []; // Biến toàn cục để lưu danh sách sản phẩm từ file JSON
+
+// Hàm tải dữ liệu từ JSON
+async function loadProducts() {
+    try {
+        const response = await fetch("products.json"); // Thay đường dẫn đúng tới file JSON
+        products = await response.json(); // Gán dữ liệu vào biến products
+        console.log("Dữ liệu sản phẩm:", products); // Kiểm tra dữ liệu trong console
+    } catch (error) {
+        console.error("Lỗi khi tải dữ liệu sản phẩm:", error);
+    }
+}
+
+// Gọi hàm loadProducts khi tải trang
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadProducts(); // Tải dữ liệu sản phẩm
+    updateInvoice(); // Cập nhật hóa đơn sau khi tải dữ liệu
+});
 
 let total = 0;
 // Hàm cập nhật thông tin hóa đơn
 function updateInvoice() {
     if (!cart || cart.length === 0) {
-        invoiceSection.innerHTML = "<p>Không có sản phẩm nào trong giỏ hàng.</p>";
+        invoiceSection.innerHTML = `<div class="empty-cart-message">Không có sản phẩm nào trong giỏ hàng.</div>`;
+        const totalSection = document.getElementById("total-section");
+        if (totalSection) {
+            totalSection.innerHTML = ""; // Xóa toàn bộ nội dung của tổng cộng
+        }
         return;
     }
     total = 0;
     const invoiceHTML = cart.map((item, index) => { // Thêm index từ map
+        const product = products.find((prod) => prod.id === item.id);
         const cleanPrice = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
         total += item.quantity * cleanPrice;
 
         return `
             <div class="invoice-card">
                 <div class="invoice-card-header">
-                    <strong>${item.name}</strong>
+                    <div><img src="${product.image}" alt="${product.name}" class="product-image"></div>
+                    <strong>${product.name}</strong>
                 </div>
                 <div class="invoice-card-body">
                     <div class="quantity-controls">
@@ -38,11 +62,23 @@ function updateInvoice() {
 
     const totalSection = document.getElementById("total-section");
     totalSection.innerHTML = `
-        <div class="invoice-total">
+    <div class="clear-cart-box">
+    <button id="clear-cart-btn" class="btn-clear-cart">Xóa tất cả đơn hàng</button>
+    </div>   
+    <div class="invoice-total">
             <strong>Tổng cộng:</strong>
             <span>${total.toLocaleString("vi-VN")} VND</span>
         </div>
     `;
+
+    // Gắn sự kiện cho nút "Xóa tất cả đơn hàng"
+    document.getElementById("clear-cart-btn").addEventListener("click", () => {
+        if (confirm("Bạn có chắc chắn muốn xóa tất cả đơn hàng không?")) {
+            cart = []; // Xóa giỏ hàng
+            localStorage.setItem("cart", JSON.stringify(cart)); // Cập nhật LocalStorage
+            updateInvoice(); // Cập nhật giao diện
+        }
+    });
 
     // Gắn sự kiện cho nút tăng/giảm số lượng
     document.querySelectorAll(".increase-quantity").forEach((btn) => {
@@ -125,12 +161,16 @@ document.addEventListener("DOMContentLoaded", function () {
         ).value;
 
         if (selectedMethod === "cod") {
+            if (!cart || cart.length === 0) {
+                return;
+            }
             // Hiển thị popup nếu chọn COD
             console.log("COD selected: Showing popup...");
             showPopup();
         } else if (selectedMethod === "e-wallet") {
-            // Gọi hàm generateQRCode nếu chọn E-Wallet
-            console.log("E-Wallet selected: Calling generateQRCode...");
+            if (!cart || cart.length === 0) {
+                return;
+            }
             generateQRCode();
         }
     });

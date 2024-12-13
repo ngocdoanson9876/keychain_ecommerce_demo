@@ -1,0 +1,14 @@
+[
+    {
+        "id": "banner_1",
+        "src": "./assets/banners/banner_1.png"
+    },
+    {
+        "id": "banner_2",
+        "src": "./assets/banners/banner_noel_1.png"
+    },
+    {
+        "id": "banner_3",
+        "src": "./assets/banners/banner_noel_2.png"
+    }
+]

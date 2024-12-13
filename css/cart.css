@@ -136,6 +136,14 @@
     margin-bottom: 10px;
 }
 
+.product-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
 .invoice-card-body {
     display: flex;
     flex-direction: column;
@@ -249,4 +257,42 @@
 
 .btn-pay:hover {
     background-color: #0056b3;
+}
+
+.empty-cart-message {
+    font-size: 15px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm */
+    text-align: center; /* Căn giữa đoạn text */
+    margin-top: 20px; /* Khoảng cách phía trên */
+}
+
+#total-section {
+    display: flex;
+    justify-content: space-between; /* Căn đều hai phần */
+    align-items: center; /* Căn giữa theo trục dọc */
+    margin-top: 20px; /* Khoảng cách phía trên */
+}
+
+.btn-clear-cart {
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    margin-right: 10px; /* Khoảng cách với phần tổng cộng */
+}
+
+.btn-clear-cart:hover {
+    background-color: #c82333; /* Màu đậm hơn khi hover */
+}
+
+.clear-cart-box{
+    border-top: 2px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+    height: 20px;
 }

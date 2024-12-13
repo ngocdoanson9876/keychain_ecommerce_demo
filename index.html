@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/product_session.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/popup_add_success.css">
+    <link rel="stylesheet" href="css/banners.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/logo_transparent_black.png" type="image/x-icon">
 </head>
@@ -43,7 +44,7 @@
                 <div class="cart-container">
                     <span class="cart-dot" id="cart-dot" style="display: none;"></span>
                     <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
-                    <span class="cart-name">Giỏ hàng</span>
+                    <span class="cart-name" id="cart-text">Giỏ hàng (0)</span>
                 </div>
             </a>
 
@@ -53,6 +54,14 @@
                     alt="Profile Picture" class="profile-picture">
             </div>
         </nav>
+
+        <div class="header-banners">
+            CHÀO MỪNG ĐẾN VỚI EC8 STORE !!! - MANG THẾ GIỚI MIHOYO ĐẾN GẦN BẠN (≧∇≦)ﾉ
+        </div>
+
+        <div class="banner-carousel" id="banner-carousel">
+            <!-- Các banner sẽ được load từ file JSON -->
+        </div>
 
         <div class="sticky-nav">
             <!-- Logo -->
@@ -81,7 +90,7 @@
                 <div class="cart-container">
                     <span class="cart-dot" id="sticky-cart-dot" style="display: none;"></span>
                     <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
-                    <span class="cart-name">Giỏ hàng</span>
+                    <span class="cart-name" id="cart-text-sticky">Giỏ hàng (0)</span>
                 </div>
             </a>
 
@@ -92,6 +101,16 @@
             </div>
             
         </div>
+
+        <div 
+        style="border-top: 2px solid #7a7676; margin-top: 30px; width: 200px;
+        margin-left: auto; margin-right: auto;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+        </div>
+
+        <div class="header-products">
+            CÁC SẢN PHẨM CỦA CHÚNG TÔI
+        </div>
+
         <br>
         <!-- Popular Tag -->
         <div class="popular-products">
@@ -113,6 +132,11 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-container">
+                <div class="footer-section">
+                    <img src="assets/logo_transparent_black.png" alt="Store Logo" class="logo"
+                    style="height: auto; width: 180px; margin-top: 10px;">
+                </div>
+                
                 <!-- Phần thông tin liên hệ -->
                 <div class="footer-section">
                     <h3>Liên hệ</h3>
@@ -161,6 +185,7 @@
     <script src="javascript/sticky_nav.js"></script>
     <script src="javascript/cart_notif.js"></script>
     <script src="javascript/products.js" defer></script>
+    <script src="javascript/banners_section.js"></script>
 </body>
 
 </html>

@@ -67,3 +67,24 @@
 .add-to-cart:hover {
     background-color: #ff0000;
 }
+
+.header-banners{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 24px;
+    font-family: Verdana;
+    background: linear-gradient(90deg, #008cff, #ca0404); /* Màu gradient */
+    -webkit-background-clip: text; /* Sử dụng background cho text */
+    -webkit-text-fill-color: transparent; /* Loại bỏ màu chữ để hiển thị gradient */
+}
+
+.header-products{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 25px;
+    background: linear-gradient(90deg, #008cff, #fd0000); /* Màu gradient */
+    -webkit-background-clip: text; /* Sử dụng background cho text */
+    -webkit-text-fill-color: transparent; /* Loại bỏ màu chữ để hiển thị gradient */
+}
