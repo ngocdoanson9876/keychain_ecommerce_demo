@@ -1,0 +1,252 @@
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Căn đều khoảng cách giữa các phần */
+    align-items: flex-start; /* Căn theo đầu phần tử */
+    gap: 20px; /* Khoảng cách giữa hai phần */
+    flex-wrap: wrap; /* Đảm bảo bố cục không bị vỡ trên màn hình nhỏ */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.shipping-info, .invoice-info {
+    flex: 1; /* Mỗi phần chiếm không gian đều nhau */
+    max-width: 48%; /* Giới hạn chiều rộng mỗi phần */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Tăng độ đậm của bóng */
+    margin: 10px;
+    background: linear-gradient(to right, #dbeffb, #fef6e4); /* Gradient nhẹ giữa xanh và vàng */
+}
+
+.shipping-info h2, .invoice-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.invoice-section {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.invoice-section p {
+    font-size: 10px;
+    color: #333;
+}
+
+/* Đảm bảo responsive trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Sắp xếp theo cột khi màn hình nhỏ */
+    }
+
+    .shipping-info, .invoice-info {
+        max-width: 100%; /* Chiều rộng đầy đủ trên màn hình nhỏ */
+    }
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #0056b3;
+}
+
+.quantity-controls .quantity {
+    font-size: 14px; /* Giảm kích thước số lượng */
+    font-weight: normal;
+}
+
+.quantity {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.item-price {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.invoice-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống hàng */
+    gap: 20px; /* Khoảng cách giữa các ô */
+    justify-content: center; /* Căn giữa các sản phẩm */
+    margin-top: 20px;
+}
+
+.invoice-card {
+    background-color: #e7f6f2; /* Đổi màu nền xanh pastel */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.invoice-card-header {
+    font-size: 13px; /* Giảm kích thước chữ của tiêu đề */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.invoice-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.invoice-card-body .quantity-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.invoice-card-body .item-price {
+    font-size: 13px; /* Giảm kích thước chữ của giá */
+    color: #555; /* Làm nhạt màu chữ giá */
+    font-weight: bold;
+}
+
+.invoice-total {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+}
+
+.invoice-card:hover {
+    background-color: #c2e8f7; /* Màu vàng nhạt hơn khi hover */
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.total-section {
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .invoice-card {
+        flex: 0 1 calc(50% - 20px); /* Chiếm 50% chiều rộng trên màn hình nhỏ */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .invoice-card {
+        flex: 0 1 calc(100% - 20px); /* Chiếm 100% chiều rộng trên màn hình rất nhỏ */
+        max-width: calc(100% - 20px);
+    }
+}
+
+.payment-method {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #333;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center; /* Căn giữa nút trong khung */
+}
+
+.btn-pay {
+    margin-top: 20px;
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-pay:hover {
+    background-color: #0056b3;
+}

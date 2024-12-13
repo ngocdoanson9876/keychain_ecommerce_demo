@@ -1,0 +1,62 @@
+[
+    {
+        "id": "acheron",
+        "name": "Acheron",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/acheron.jpg"
+    },
+    {
+        "id": "chiori",
+        "name": "Chiori",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/chiori.jpg"
+    },
+    {
+        "id": "dan_heng_il",
+        "name": "Dan Heng IL",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/danhengil.jpg"
+    },
+    {
+        "id": "furina",
+        "name": "Furina",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/furina.jpg"
+    },
+    {
+        "id": "jing_yuan",
+        "name": "Jing Yuan",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/jingyuan.jpg"
+    },
+    {
+        "id": "kafka",
+        "name": "Kafka",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/kafka.jpg"
+    },
+    {
+        "id": "keqing",
+        "name": "Keqing",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/keqing.jpg"
+    },
+    {
+        "id": "kiana",
+        "name": "Kiana",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/kiana.jpg"
+    },
+    {
+        "id": "klee",
+        "name": "Klee",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/klee.jpg"
+    },
+    {
+        "id": "raiden_shogun",
+        "name": "Raiden Shogun",
+        "price": "18,000 VND",
+        "image": "./assets/products_img/raidenshogun.jpg"
+    }
+]

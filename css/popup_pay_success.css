@@ -1,0 +1,40 @@
+/* Phần cơ bản cho popup */
+#success-popup {
+    position: fixed;
+    bottom: -100%; /* Bắt đầu từ ngoài màn hình ở phía dưới */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Chiều rộng toàn màn hình */
+    background-color: #4caf50; /* Nền vàng nhạt */
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: bottom 1.5s ease, opacity 0.5s ease; /* Hiệu ứng trượt từ dưới lên */
+    z-index: 1000;
+    opacity: 0;
+}
+
+/* Khi hiển thị popup */
+#success-popup.show {
+    bottom: 20px; /* Trượt lên màn hình */
+    opacity: 1;
+}
+
+/* Nội dung bên trong popup */
+#success-popup .popup-content {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff; /* Màu chữ nổi bật */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #success-popup {
+        padding: 10px; /* Điều chỉnh khoảng cách trên màn hình nhỏ */
+    }
+
+    #success-popup .popup-content {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EC8 Store</title>
+    <link rel="stylesheet" href="css/nav_bar.css">
+    <link rel="stylesheet" href="css/tags.css">
+    <link rel="stylesheet" href="css/product_session.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/popup_add_success.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/logo_transparent_black.png" type="image/x-icon">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="#">
+                    <img src="assets/logo_transparent_black.png" alt="Store Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Search Input -->
+            <div class="search-container">
+                <form class="search-form">
+                    <select class="search-select">
+                        <option value="all">Tất cả</option>
+                        <option value="products">Genshin Impact</option>
+                        <option value="services">Honkai Star Rail</option>
+                        <option value="categories">Honkai Impact 3rd</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="Tên sản phẩm...">
+                    <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Shopping Cart -->
+            <a href="cart.html" style="text-decoration: none;">
+                <div class="cart-container">
+                    <span class="cart-dot" id="cart-dot" style="display: none;"></span>
+                    <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+                    <span class="cart-name">Giỏ hàng</span>
+                </div>
+            </a>
+
+            <!-- User Profile -->
+            <div class="profile-container">
+                <img src="https://64.media.tumblr.com/9156a39fee5687ee2e1195865ca4617a/e3d0380765d47cba-a3/s540x810/d5cc921c15a9c9fde3bb3b8df0dbc59abd02dfd0.png"
+                    alt="Profile Picture" class="profile-picture">
+            </div>
+        </nav>
+
+        <div class="sticky-nav">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="#">
+                    <img src="assets/logo_transparent_black.png" alt="Store Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Search Input -->
+            <div class="search-container">
+                <form class="search-form">
+                    <select class="search-select">
+                        <option value="all">Tất cả</option>
+                        <option value="products">Genshin Impact</option>
+                        <option value="services">Honkai Star Rail</option>
+                        <option value="categories">Honkai Impact 3rd</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="Tên sản phẩm...">
+                    <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Shopping Cart -->
+            <a href="cart.html" style="text-decoration: none;">
+                <div class="cart-container">
+                    <span class="cart-dot" id="sticky-cart-dot" style="display: none;"></span>
+                    <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+                    <span class="cart-name">Giỏ hàng</span>
+                </div>
+            </a>
+
+            <!-- User Profile -->
+            <div class="profile-container">
+                <img src="https://64.media.tumblr.com/9156a39fee5687ee2e1195865ca4617a/e3d0380765d47cba-a3/s540x810/d5cc921c15a9c9fde3bb3b8df0dbc59abd02dfd0.png"
+                    alt="Profile Picture" class="profile-picture">
+            </div>
+            
+        </div>
+        <br>
+        <!-- Popular Tag -->
+        <div class="popular-products">
+            <div class="product-list">
+                <div class="product-item">Acheron</div>
+                <div class="product-item">Furina</div>
+                <div class="product-item">Raiden Shogun</div>
+                <div class="product-item">Dan Heng</div>
+            </div>
+        </div>
+
+        <!-- Products -->
+        <div class="product-section">
+            <div class="product-grid" id="product-grid">
+                <!-- Các sản phẩm sẽ được render bằng JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Phần thông tin liên hệ -->
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Email: ec8store@gmail.com</p>
+                    <p>Điện thoại: 0123 456 789</p>
+                </div>
+
+                <!-- Phần liên kết nhanh -->
+                <div class="footer-section">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#about">Giới thiệu</a></li>
+                        <li><a href="#products">Sản phẩm</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Phần widget -->
+                <div class="footer-section">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <div class="widget-container">
+                        <!-- Widget Shopee -->
+                        <a href="https://shopee.vn/product/1416729415/28069630570/" target="_blank"
+                            class="widget shopee">
+                            <img src="./assets/shopee_icon.png" alt="Shopee" />
+                            <span>Shopee</span>
+                        </a>
+
+                        <!-- Widget TikTok Shop -->
+                        <a href="https://www.tiktok.com/@ec8store" target="_blank" class="widget">
+                            <img src="./assets/tiktokshop_icon.png" alt="TikTok Shop" />
+                            <span>TikTok Shop</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Phần bản quyền -->
+            <div>
+                <p><b>Copyright &copy; 2024 EC8 Store. Đã đăng ký bản quyền.</b></p>
+            </div>
+        </footer>
+    </div>
+    <div id="popup-notification" class="popup" style="display: none;"></div>
+
+    <script src="javascript/sticky_nav.js"></script>
+    <script src="javascript/cart_notif.js"></script>
+    <script src="javascript/products.js" defer></script>
+</body>
+
+</html>

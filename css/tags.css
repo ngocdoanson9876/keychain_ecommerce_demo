@@ -1,0 +1,32 @@
+/* Phần chứa sản phẩm phổ biến */
+.popular-products {
+    color: #002e5d;
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background: #e6f3ff;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.product-item:hover {
+    background: #baedff;
+    color: #000000;
+    transform: translateY(-px); /* Hiệu ứng nổi lên */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Tăng đổ bóng khi hover */
+}
